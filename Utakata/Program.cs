@@ -74,8 +74,7 @@ namespace Utakata
                 Console.WriteLine($"IOException Handler: {ex}");
             } catch (Exception e) {
                 Console.WriteLine($"Generic Exception Handler: {e}");
-            } finally
-            {
+            } finally {
                 GC.Collect();
             }
         }
