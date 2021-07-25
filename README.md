@@ -5,9 +5,12 @@
 > 地域IDを入力することで天気予報を表示します。
 
 ```markdown
-・ zinbei2wの天気予報機能を元に作りました。
+仕様
+・ zinbei2wの天気予報機能から移植
 
-詳細としては、スクレイピングとJSONファイルを加工しました。
+詳細
+・APIからスクレイピング
+・JSONファイルを加工
 ```
 
-使い方は[こちら](https://github.com/takkii/Utakata/wiki/Utakata-wiki)←
+Wikiは[こちら](https://github.com/takkii/Utakata/wiki/Utakata-wiki)←
