@@ -13,4 +13,5 @@
 ・JSONファイルを加工
 ```
 
-[Wiki](https://github.com/takkii/Utakata/wiki/Utakata-wiki) | [SideKick](https://github.com/takkii/SideKick) | [AsOne](https://github.com/takkii/AsOne)
+|[Wiki](https://github.com/takkii/Utakata/wiki/Utakata-wiki) | [SideKick](https://github.com/takkii/SideKick) | [AsOne](https://github.com/takkii/AsOne)|
+| :---: | :---: | :---: |
