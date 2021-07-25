@@ -14,7 +14,8 @@ namespace Utakata
             {
                 Console.WriteLine("------------------------------------------------------------");
                 Console.WriteLine("");
-                Console.WriteLine("IDの詳細はこちら → "+"https://github.com/takkii/Utakata/wiki/Utakata-wiki");
+                Console.Write("IDの詳細はこちら → ");
+                Console.WriteLine("https://github.com/takkii/Utakata/wiki/Utakata-wiki");
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------------------");
                 Console.WriteLine("");
