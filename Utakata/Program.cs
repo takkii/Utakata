@@ -21,10 +21,11 @@ namespace Utakata
                 Console.WriteLine("");
                 Console.WriteLine("日本全国のIDから自分の地域にあったIDを入力！");
                 string baseUrl = "https://weather.tsukumijima.net/api/forecast";
-                // 石川県加賀のID
                 Console.WriteLine("");
                 Console.Write("> ");
+                // input_str is cityname command line.
                 var input_str = Console.ReadLine();
+                // 石川県加賀のID
                 // string cityname = "170010";
 
                 string url = $"{baseUrl}?city={input_str}";
