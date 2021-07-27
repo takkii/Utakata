@@ -59,7 +59,7 @@ namespace Utakata
                 Console.WriteLine("");
                 // 発表時刻
                 DateTime des_time = (DateTime)((jobj["description"]["publicTime"] as JValue).Value);
-                var dt = des_time;
+                DateTime dt = des_time;
                 const string reiwa_kanji = "令和";
                 const string OneYear = "年";
                 const string OneMonth = "月";
@@ -67,7 +67,7 @@ namespace Utakata
                 const string OneHour = "時";
                 const string OneMinutes = "分";
                 const string Oneseconds = "秒";
-                var reiwa = (reiwa_kanji + (dt.Year - 2018) + OneYear + dt.Month + OneMonth + dt.Day + Onedays + dt.Hour + OneHour + dt.Minute + OneMinutes + dt.Second + Oneseconds);
+                string reiwa = (reiwa_kanji + (dt.Year - 2018) + OneYear + dt.Month + OneMonth + dt.Day + Onedays + dt.Hour + OneHour + dt.Minute + OneMinutes + dt.Second + Oneseconds);
 
                 Console.WriteLine("天気概況文の発表時刻 : " + reiwa);
                 Console.WriteLine("");
