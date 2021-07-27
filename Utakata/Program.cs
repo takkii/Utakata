@@ -72,10 +72,10 @@ namespace Utakata
                 Console.WriteLine("天気概況文の発表時刻 : " + reiwa);
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------------------");
-            } catch (IOException ex) {
-                Console.WriteLine($"IOException Handler: {ex}");
+            } catch (IOException e) {
+                Console.WriteLine($"IOException Handler: {e.Message}");
             } catch (Exception e) {
-                Console.WriteLine($"Generic Exception Handler: {e}");
+                Console.WriteLine($"Generic Exception Handler: {e.Message}");
             } finally {
                 GC.Collect();
             }
