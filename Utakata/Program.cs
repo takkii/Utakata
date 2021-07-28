@@ -77,19 +77,17 @@ namespace Utakata
                 // 発表時刻
                 DateTime des_time = (DateTime)((jobj["description"]["publicTime"] as JValue).Value);
                 DateTime dt = des_time;
-                t.reiwa_kanji = "令和";
-                t.OneYear = "年";
-                t.OneMonth = "月";
-                t.Onedays = "日";
-                t.OneHour = "時";
-                t.OneMinutes = "分";
-                t.Oneseconds = "秒";
+
+                t.reiwa_kanji = "令和"; t.OneYear = "年"; t.OneMonth = "月"; t.Onedays = "日";
+                t.OneHour = "時"; t.OneMinutes = "分"; t.Oneseconds = "秒";
+                
                 string reiwa = (t.reiwa_kanji + (dt.Year - 2018) + t.OneYear + dt.Month + t.OneMonth + dt.Day + t.Onedays 
                     + dt.Hour + t.OneHour + dt.Minute + t.OneMinutes + dt.Second + t.Oneseconds);
 
                 Console.WriteLine("天気概況文の発表時刻 : " + reiwa);
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------------------");
+            
             } catch (IOException e) {
                 Console.WriteLine($"IOException Handler: {e.Message}");
             } catch (Exception e) {
