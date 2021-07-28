@@ -6,12 +6,31 @@ using Newtonsoft.Json.Linq;
 
 namespace Utakata
 {
+    class Weathertype
+    {
+        // 石川県加賀のID
+        // string city = "170010";
+        // string url = $"{baseUrl}?city={city}";
+
+        public string baseUrl;
+        public string city;
+        public string url;
+        public string json;
+        public string reiwa_kanji;
+        public string OneYear;
+        public string OneMonth;
+        public string Onedays;
+        public string OneHour;
+        public string OneMinutes;
+        public string Oneseconds;
+    }
     class Program
     {
         static void Main()
         {
             try
             {
+                Weathertype t = new();
                 Console.WriteLine("------------------------------------------------------------");
                 Console.WriteLine("");
                 Console.Write("IDの詳細はこちら → ");
@@ -23,17 +42,12 @@ namespace Utakata
                 Console.WriteLine("");
                 Console.Write("> ");
 
-                // API取得先
-                string baseUrl = "https://weather.tsukumijima.net/api/forecast";
-                // IDの入力待ち
-                var input_str = Console.ReadLine();
-
-                // 石川県加賀のID
-                // string cityname = "170010";
-
-                string url = $"{baseUrl}?city={input_str}";
-                string json = new HttpClient().GetStringAsync(url).Result;
-                JObject jobj = JObject.Parse(json);
+                // 天気予報の取得 (JSON形式)
+                t.baseUrl = "https://weather.tsukumijima.net/api/forecast";
+                t.city = Console.ReadLine();
+                t.url = $"{t.baseUrl}?city={t.city}";
+                t.json = new HttpClient().GetStringAsync(t.url).Result;
+                JObject jobj = JObject.Parse(t.json);
 
                 Console.WriteLine("--------------------------天気予報--------------------------");
                 Console.WriteLine("");
@@ -63,14 +77,15 @@ namespace Utakata
                 // 発表時刻
                 DateTime des_time = (DateTime)((jobj["description"]["publicTime"] as JValue).Value);
                 DateTime dt = des_time;
-                const string reiwa_kanji = "令和";
-                const string OneYear = "年";
-                const string OneMonth = "月";
-                const string Onedays = "日";
-                const string OneHour = "時";
-                const string OneMinutes = "分";
-                const string Oneseconds = "秒";
-                string reiwa = (reiwa_kanji + (dt.Year - 2018) + OneYear + dt.Month + OneMonth + dt.Day + Onedays + dt.Hour + OneHour + dt.Minute + OneMinutes + dt.Second + Oneseconds);
+                t.reiwa_kanji = "令和";
+                t.OneYear = "年";
+                t.OneMonth = "月";
+                t.Onedays = "日";
+                t.OneHour = "時";
+                t.OneMinutes = "分";
+                t.Oneseconds = "秒";
+                string reiwa = (t.reiwa_kanji + (dt.Year - 2018) + t.OneYear + dt.Month + t.OneMonth + dt.Day + t.Onedays 
+                    + dt.Hour + t.OneHour + dt.Minute + t.OneMinutes + dt.Second + t.Oneseconds);
 
                 Console.WriteLine("天気概況文の発表時刻 : " + reiwa);
                 Console.WriteLine("");
