@@ -12,17 +12,17 @@ namespace Utakata
         // string city = "170010";
         // string url = $"{baseUrl}?city={city}";
 
-        public string baseUrl;
-        public string city;
-        public string url;
-        public string json;
-        public string reiwa_kanji;
-        public string OneYear;
-        public string OneMonth;
-        public string Onedays;
-        public string OneHour;
-        public string OneMinutes;
-        public string Oneseconds;
+        public string baseUrl = null!;
+        public string city = null!;
+        public string url = null!;
+        public string json = null!;
+        public string reiwa_kanji = null!;
+        public string OneYear = null!;
+        public string OneMonth = null!;
+        public string Onedays = null!;
+        public string OneHour = null!;
+        public string OneMinutes = null!;
+        public string Oneseconds = null!;
     }
     class Program
     {
@@ -80,14 +80,14 @@ namespace Utakata
 
                 t.reiwa_kanji = "令和"; t.OneYear = "年"; t.OneMonth = "月"; t.Onedays = "日";
                 t.OneHour = "時"; t.OneMinutes = "分"; t.Oneseconds = "秒";
-                
+
                 string reiwa = (t.reiwa_kanji + (dt.Year - 2018) + t.OneYear + dt.Month + t.OneMonth + dt.Day + t.Onedays 
                     + dt.Hour + t.OneHour + dt.Minute + t.OneMinutes + dt.Second + t.Oneseconds);
 
                 Console.WriteLine("天気概況文の発表時刻 : " + reiwa);
                 Console.WriteLine("");
                 Console.WriteLine("------------------------------------------------------------");
-            
+
             } catch (IOException e) {
                 Console.WriteLine($"IOException Handler: {e.Message}");
             } catch (Exception e) {
